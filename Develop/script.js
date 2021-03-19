@@ -25,11 +25,11 @@ function writePassword() {
 
     console.log(userpwLength);
 
-    // 4 consecutive confirm boxes, acts like a checkboxes, results are True/False
-    var lowerCharBoolean = confirm("Click OK to confirm including lowercase Characters");
-    var upperCharBoolean = confirm("Click OK to confirm including uppercase Characters");
-    var numericCharBoolean = confirm("Click OK to confirm including numeric Characters");
-    var specialCharBoolean = confirm("Click OK to confirm including special Characters");
+    // 4 consecutive confirm popups, acts like checkboxes, results are True/False
+    var lowerCharBoolean = confirm("Click OK to confirm including LOWERCASE Characters");
+    var upperCharBoolean = confirm("Click OK to confirm including UPPERCASE Characters");
+    var numericCharBoolean = confirm("Click OK to confirm including NUMERIC Characters");
+    var specialCharBoolean = confirm("Click OK to confirm including SPECIAL Characters");
 
     // CHECKS if the 4 booleans above are all False
     if (!lowerCharBoolean && !upperCharBoolean && !numericCharBoolean && !specialCharBoolean) {
@@ -47,15 +47,11 @@ function writePassword() {
     // 3rd Answer post, 31 Vote as of 18 MAR 21
     // Answered by user "hajikelist" and edited by "Bruno Bronosky"
 
-    length = userpwLength;
-    var upString="", 
-    lowString="";
-
-    upString = upperCharBoolean ? ("abcdefghijklmnopqrstuvwxyz").toUpperCase() : "";
-    lowString = lowerCharBoolean ? "abcdefghijklmnopqrstuvwxyz" : "";
-
+    pwLength = userpwLength;
+    var upString = upperCharBoolean ? ("abcdefghijklmnopqrstuvwxyz").toUpperCase() : "";
+    var lowString = lowerCharBoolean ? "abcdefghijklmnopqrstuvwxyz" : "";
     var numeric = numericCharBoolean ? "0123456789" : "";
-    var punctuation = specialCharBoolean ? "!@#$%^&*()_+~`|}{[]\:;?><,./-=" : "";
+    var special = specialCharBoolean ? "!@#$%^&*()_+~`|}{[]\:;?><,./-=" : "";
     var password = "";
     var character = "";
     // if (numericCharBoolean) {
@@ -64,29 +60,29 @@ function writePassword() {
     //   numeric="";
     // }  is equivalent to numericCharBoolean ? "0123456789" : "";
 
-    while( password.length<length ) {
+    while( password.length<pwLength ) {
       
-        //Generate random characters
-        entity1 = Math.ceil(lowString.length * Math.random()*Math.random());
-        entity2 = Math.ceil(numeric.length * Math.random()*Math.random());
-        entity3 = Math.ceil(punctuation.length * Math.random()*Math.random());
-        entity4 = Math.ceil(upString.length * Math.random()*Math.random());   
+        //Generate random characters based on pwLength
+        lowCaseChar = Math.ceil(lowString.length * Math.random()*Math.random());
+        numericChar = Math.ceil(numeric.length * Math.random()*Math.random());
+        specialChar = Math.ceil(special.length * Math.random()*Math.random());
+        upCaseChar = Math.ceil(upString.length * Math.random()*Math.random());   
 
-        // Concatenates everything
-        character += lowString.charAt( entity1 );
-        character += numeric.charAt( entity2 );
-        character += punctuation.charAt( entity3 );
-        character += upString.charAt( entity4 );
+        // Concatenates every 
+        character += lowString.charAt( lowCaseChar );
+        character += numeric.charAt( numericChar );
+        character += special.charAt( specialChar );
+        character += upString.charAt( upCaseChar );
 
         password = character;
     }
 
     console.log(password);
     // Jumbles the characters
-    password=password.split('').sort(function(){return 0.5-Math.random()}).join('');
+    password=password.split("").sort(function(){return 0.5-Math.random()}).join("");
     
-    console.log(password.substr(0,length));
-    document.getElementById("password").placeholder = (password.substr(0,length));
+    console.log(password.substr(0,pwLength));
+    document.getElementById("password").placeholder = (password.substr(0,pwLength));
 
   } else {
     alert("You entered something that is not a number!");
