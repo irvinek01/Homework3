@@ -12,6 +12,12 @@ The following image shows the web application's appearance and functionality:
 
 ![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
 
+![Upon the button click, asks the user for password length in a Popup prompt box.](./Assets/input.png)
+
+![Next, a series of OK/cancel Popup confirm boxes whether to include lower/upper, numeric, special characters.](./Assets/ask-include.png)
+
+![And Last, display the results inside the text area.](./Assets/end-result.png)
+
 #### URLs
 https://irvinek01.github.io/Homework3/
 https://github.com/irvinek01/Homework3
