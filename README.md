@@ -7,11 +7,16 @@ It is a Password Generator, at the click of the button, A Popup prompt box will 
 - To help ease of thinking complex passwords by just the click of a button (And a series of pop up boxes)
 - Learned array looping, getting values from different popup boxes (confirm, alert and prompt), using Boolean values to trigger functions and to turn them off, input validations checks(series of if else if conditional statements)
 
-### URLs
+### Screenshots
+The following image shows the web application's appearance and functionality:
+
+![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
+
+#### URLs
 https://irvinek01.github.io/Homework3/
 https://github.com/irvinek01/Homework3
 
-### SPECIAL THANKS
+##### SPECIAL THANKS
 - https://stackoverflow.com/questions/1497481/javascript-password-generator
 - 3rd Answer post, with 31 Vote as of 18 MAR 21
 - Answered by user "hajikelist" and edited by "Bruno Bronosky"
